@@ -151,7 +151,7 @@ if [ -f "${HOME}/.cache/wal/colors.sh" ]; then
         gsettings set org.gnome.Terminal.Legacy.Profile:"$PROFILE_PATH" palette "$PALETTE"
         gsettings set org.gnome.Terminal.Legacy.Profile:"$PROFILE_PATH" background-color "$background"
         gsettings set org.gnome.Terminal.Legacy.Profile:"$PROFILE_PATH" foreground-color "$foreground"
-        gsettings set org.gnome.Terminal.Legacy.Profile:"$PROFILE_PATH" use-transparent-background false
+        gsettings set org.gnome.Terminal.Legacy.Profile:"$PROFILE_PATH" use-transparent-background "$CURRENT_TRANSPARENCY"
         
         echo "✓ Terminal colors applied successfully"
     fi
