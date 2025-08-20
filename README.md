@@ -1,6 +1,6 @@
 # setcolors
 
-A self-managing script that uses pywal to generate color schemes from images and applies them to Ubuntu GNOME.
+Script for changing color schemas from images and applying them to Ubuntu GNOME.
 
 ## Usage
 ```bash
@@ -11,8 +11,7 @@ setcolors -i /path/to/image.jpg
 setcolors -i /path/to/image.jpg -b
 ```
 
-## Features
-- Auto-installs/removes pywal using pipx as needed
-- Zero permanent Python packages
+## Things
+- Auto-installs/removes pywal using pipx 
 - Works with GNOME Wayland
-- Updates fastfetch colors automatically
+
