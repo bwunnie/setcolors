@@ -23,12 +23,12 @@ IMAGE_PATH=""
 SET_BACKGROUND=false
 PYWAL_INSTALLED_BY_SCRIPT=false
 
-# Cleanup function
+# Cleanup function, gets called automatically by on exit
 cleanup_pywal() {
     if [ "$PYWAL_INSTALLED_BY_SCRIPT" = true ]; then
         echo "Cleaning up temporary pywal installation..."
         pipx uninstall pywal >/dev/null 2>&1
-        echo "✓ Temporary pywal installation removed"
+        echo "Temporary pywal installation removed"
     fi
 }
 
@@ -199,8 +199,8 @@ if [ -f "${HOME}/.cache/wal/sequences" ]; then
 fi
 
 echo ""
-echo "🎨 Color scheme applied successfully!"
-echo "✓ Terminal colors updated"
+echo "Color scheme applied"
+echo "Terminal colors updated"
 if [ "$SET_BACKGROUND" = true ]; then
     echo "✓ Desktop background set"
 fi
@@ -211,5 +211,3 @@ echo "  - fastfetch and other system info tools"
 echo "  - Applications that support pywal/Xresources"
 echo ""
 echo "Colors are saved in: ${HOME}/.cache/wal/"
-
-# Note: cleanup_pywal() will be called automatically via the EXIT trap
