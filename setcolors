@@ -39,7 +39,7 @@ trap cleanup_pywal EXIT
 ensure_pywal() {
     # Check if wal command is available
     if command -v wal &> /dev/null; then
-        echo "✓ pywal is already available"
+        echo "pywal is already available"
         return 0
     fi
     
@@ -53,7 +53,7 @@ ensure_pywal() {
     echo "Installing pywal temporarily with pipx..."
     if pipx install pywal >/dev/null 2>&1; then
         PYWAL_INSTALLED_BY_SCRIPT=true
-        echo "✓ pywal installed temporarily"
+        echo "pywal installed temporarily"
         
         # Make sure pipx bin is in PATH for this session
         export PATH="$HOME/.local/bin:$PATH"
@@ -153,7 +153,7 @@ if [ -f "${HOME}/.cache/wal/colors.sh" ]; then
         gsettings set org.gnome.Terminal.Legacy.Profile:"$PROFILE_PATH" foreground-color "$foreground"
         gsettings set org.gnome.Terminal.Legacy.Profile:"$PROFILE_PATH" use-transparent-background "$CURRENT_TRANSPARENCY"
         
-        echo "✓ Terminal colors applied successfully"
+        echo "Terminal colors applied successfully"
     fi
 else
     echo "Warning: Pywal colors file not found at ${HOME}/.cache/wal/colors.sh"
@@ -166,7 +166,7 @@ echo "Applying colors to supported applications..."
 if command -v xrdb &> /dev/null; then
     if [ -f "${HOME}/.cache/wal/colors.Xresources" ]; then
         xrdb -merge "${HOME}/.cache/wal/colors.Xresources" 2>/dev/null
-        echo "✓ Xresources updated (for app compatibility)"
+        echo "Xresources updated (for app compatibility)"
     fi
 fi
 
@@ -190,7 +190,7 @@ if [ -f "${HOME}/.cache/wal/colors.sh" ]; then
             echo "source ~/.cache/wal/colors.sh 2>/dev/null" >> "$rcfile"
         fi
     done
-    echo "✓ Shell configuration updated for persistence"
+    echo "Shell configuration updated for persistence"
 fi
 
 # Send escape sequences to update terminal colors immediately
@@ -202,7 +202,7 @@ echo ""
 echo "Color scheme applied"
 echo "Terminal colors updated"
 if [ "$SET_BACKGROUND" = true ]; then
-    echo "✓ Desktop background set"
+    echo "Desktop background set"
 fi
 echo ""
 echo "The new color scheme is now active in:"
