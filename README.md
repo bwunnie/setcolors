@@ -13,5 +13,5 @@ setcolors -i /path/to/image.jpg -b
 
 ## Things
 - Auto-installs/removes pywal using pipx 
-- Works with GNOME Wayland
+- Works with GNOME Wayland sometimes
 
